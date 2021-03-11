@@ -4,3 +4,4 @@ def error_3(path):
             cash = file.read()
     except:
         print(f'Error: Operation file corrupted \n')
+    file.close()
