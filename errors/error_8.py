@@ -15,4 +15,9 @@ def error_8(filename):
     for char in cash[-1]:
         if char == ' ':
             count_spaces_2 += 1
-    return length_1 + length_2 == count_spaces_1 + count_spaces_2 - 2
+    if length_1 + length_2 == count_spaces_1 + count_spaces_2 - 2:
+        print("Оно работает")
+        return True
+    else:
+        print("Fuck")
+        return

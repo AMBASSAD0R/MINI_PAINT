@@ -10,6 +10,3 @@ def error_5(filename):
                 'C') == 1:
             return error_6(filename)
         return False
-
-
-print(error_5('qwe'))
