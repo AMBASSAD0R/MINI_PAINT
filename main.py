@@ -1,7 +1,11 @@
 from errors.error_1 import error_1
-from errors.error_2 import error_2
-from errors.error_3 import error_3
-from errors.error_4 import error_4
-from errors.error_5 import error_5
+from additional_function import *
 
-if error_1()
+
+file = input()
+if error_1(file):
+    with open(file, mode="r", encoding="UTF-8") as file:
+        inp = file.read()
+        file.close()
+    inp = ft_split(inp, '\n')
+
