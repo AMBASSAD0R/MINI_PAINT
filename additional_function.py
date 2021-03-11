@@ -1,11 +1,11 @@
-def ft_len(st):
-    kol = 0
-    for i in st:
-        kol += 1
-    return kol
+def ft_len(string):
+    count = 0
+    for _ in string:
+        count += 1
+    return count
 
 
-def ft_split(string):
+def ft_split(string, ch):
     tmp = ''
     mass = []
     for ch in string:

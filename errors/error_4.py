@@ -1,2 +1,5 @@
+from additional_function import ft_split
+
+
 def error_4(filename):
-    return filename.split('.')[-1] == 'it'
+    return ft_split(filename)[-1] == 'it'
