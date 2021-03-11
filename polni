@@ -1,0 +1,7 @@
+def p(width, height, background_char):
+    k = 0
+    for i in range(width):
+        for i in range(height):
+            print(background_char, end="")
+        print("")
+print(p(int(input()), int(input()), input()))
