@@ -1,4 +1,5 @@
 import os
+from errors.error_6 import error_6
 
 
 def error_5(filename):
@@ -7,8 +8,5 @@ def error_5(filename):
         cash = cash.split('\n')
         if cash[-1].count('r') + cash[-1].count('R') + cash[-1].count('L') + cash[-1].count('c') + cash[-1].count(
                 'C') == 1:
-            return True
+            return error_6(filename)
         return False
-
-
-print(error_5('qwe'))
