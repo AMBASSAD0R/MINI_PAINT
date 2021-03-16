@@ -9,3 +9,6 @@ if error_1(file):
         file.close()
     inp = ft_split(inp, '\n')
 
+
+mas_global = []  # здесь хранится основной массив с обрезаной картинкой
+
