@@ -19,5 +19,5 @@ def error_8(filename):
         print("Оно работает")
         return True
     else:
-        print("Fuck")
-        return
+        print("-____-")
+        return False
