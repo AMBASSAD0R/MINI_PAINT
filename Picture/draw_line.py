@@ -1,19 +1,48 @@
 from additional_function import *
 
 
-def draw_line(path):
+def parser(path):
     with open(path) as file:
         data = file.read()
         data = ft_split(data, '\n')
+        data[0] = ft_split(data[0], ' ')
+        data[1] = ft_split(data[1], ' ')
 
-    size_x = int(data[0][0])
-    size_y = int(data[0][3])
+    field = [int(data[0][0]), int(data[0][1]), data[0][2]]
 
-    x1, y1, x2, y2 = int(data[1][2]), int(data[1][4]), int(data[1][6]), int(data[1][8])
+    todo = []
+    command = data[1][0]
+    if command == 'L':
+        todo.append(data[1][0])
+        todo.append(int(data[1][1]))
+        todo.append(int(data[1][2]))
+        todo.append(int(data[1][3]))
+        todo.append(int(data[1][4]))
+        todo.append(data[1][5])
 
-    char = data[1][-1]
+    elif command == 'R' or command == 'r':
+        todo.append(int(data[1][1]))
+        todo.append(int(data[1][2]))
+        todo.append(int(data[1][3]))
+        todo.append(int(data[1][4]))
+        todo.append(data[1][5])
+    elif command == 'c' or command == 'C':
+        todo.append(int(data[1][1]))
+        todo.append(int(data[1][2]))
+        todo.append(int(data[1][3]))
+        todo.append(data[1][4])
 
-    field = [['*' for _ in range(size_x)] for _ in range(size_y)]
+    return field, todo
+
+
+def draw_line(field, todo):
+    map = [[field[-1] for _ in range(field[0])] for _ in range(field[1])]
+
+    x1 = todo[1]
+    y1 = todo[2]
+    x2 = todo[3]
+    y2 = todo[4]
+    char = todo[5]
 
     dx = x2 - x1
     dy = y2 - y1
@@ -35,7 +64,7 @@ def draw_line(path):
 
     error, t = el / 2, 0
 
-    field[y][x] = char
+    map[y][x] = char
 
     while t < el:
         error -= es
@@ -47,4 +76,8 @@ def draw_line(path):
             x += pdx
             y += pdy
         t += 1
-        field[y][x] = char
+        map[y][x] = char
+
+
+field, todo = parser(input())
+draw_line(field, todo)
