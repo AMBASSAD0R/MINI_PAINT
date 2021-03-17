@@ -77,7 +77,3 @@ def draw_line(field, todo):
             y += pdy
         t += 1
         map[y][x] = char
-
-
-field, todo = parser(input())
-draw_line(field, todo)

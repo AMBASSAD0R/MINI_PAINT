@@ -35,7 +35,7 @@ def parser(path):
     return field, todo
 
 
-path = input()
+path = 'C:/Users/User/PycharmProjects/MINI_PAINT/operation.it'
 if error_1(path):
     field, todo = parser(path)
     print(field, todo)

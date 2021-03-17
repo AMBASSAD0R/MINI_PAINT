@@ -1,20 +1,24 @@
 from additional_function import *
 
 
-def error_8(filename):
-    with open(filename) as filename:
-        cash = filename.read()
-        cash = cash.split('\n')
-    length_1 = ft_len(cash[0])
-    length_2 = ft_len(cash[-1])
-    count_spaces_1 = 0
-    count_spaces_2 = 0
-    for char in cash[0]:
-        if char == ' ':
-            count_spaces_1 += 1
-    for char in cash[-1]:
-        if char == ' ':
-            count_spaces_2 += 1
-    if length_1 + length_2 == count_spaces_1 + count_spaces_2 - 2:
+def error_8(path):
+    with open(path) as file:
+        data = []
+        for i in ft_split(file.read(), '\n'):
+            data.append(i)
+    count_spaces = 0
+    for i in data[0]:
+        if i == ' ':
+            count_spaces += 1
+    for i in data[1]:
+        if i == ' ':
+            count_spaces += 1
+
+    data_0 = ft_split(data[0])
+    data_1 = ft_split(data[1])
+
+    count_elements = ft_len(data_0) + ft_len(data_1)
+    if count_elements - count_spaces == 2:
         return True
+    print('Error8')
     return False
