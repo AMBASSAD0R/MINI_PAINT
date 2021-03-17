@@ -1,3 +1,5 @@
+from Creat_picture import create_mas
+from Picture.square_full import square_full
 from additional_function import *
 from errors.error_1 import error_1
 
@@ -13,6 +15,7 @@ def parser(path):
 
     todo = []
     command = data[1][0]
+    todo.append(command)
     if command == 'L':
         todo.append(int(data[1][1]))
         todo.append(int(data[1][2]))
@@ -38,4 +41,12 @@ def parser(path):
 path = 'C:/Users/User/PycharmProjects/MINI_PAINT/operation.it'
 if error_1(path):
     field, todo = parser(path)
-    print(field, todo)
+    if todo[0] == 'R':
+        x = todo[1]
+        y = todo[2]
+        w = todo[3]
+        h = todo[4]
+        bg = todo[5]
+        xx = square_full(x, y, w, h, bg)
+        for _ in range(len(xx)):
+            print(*xx[_])
