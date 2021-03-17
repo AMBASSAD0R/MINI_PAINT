@@ -17,6 +17,6 @@ def square_not_full(x, y, w, h, bg):
 
 
 # print(square_not_full(1,3,4, 5, '*'))
-# xx = square_not_full(1, 3, 4, 5, '*')
+# xx = square_not_full(1, 3, 8, 5, '*')
 # for x in range(len(xx)):
 #     print(*xx[x])
