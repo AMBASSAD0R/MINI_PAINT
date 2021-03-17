@@ -16,8 +16,5 @@ def error_8(filename):
         if char == ' ':
             count_spaces_2 += 1
     if length_1 + length_2 == count_spaces_1 + count_spaces_2 - 2:
-        print("Оно работает")
         return True
-    else:
-        print("-____-")
-        return False
+    return False

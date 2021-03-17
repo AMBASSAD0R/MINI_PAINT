@@ -1,12 +1,11 @@
-import os
 from errors.error_6 import error_6
+from additional_function import ft_len
 
 
-def error_5(filename):
-    with open(filename) as filename:
-        cash = filename.read()
-        cash = cash.split('\n')
-        if cash[-1].count('r') + cash[-1].count('R') + cash[-1].count('L') + cash[-1].count('c') + cash[-1].count(
-                'C') == 1:
-            return error_6(filename)
-        return False
+def error_5(path):
+    with open(path) as file:
+        data = file.readlines()
+    for element in range(2, ft_len(data), 2):
+        if data[element].isdigit():
+            return False
+    return error_6(path)
