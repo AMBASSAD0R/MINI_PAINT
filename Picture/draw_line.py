@@ -48,19 +48,3 @@ def draw_line(path):
             y += pdy
         t += 1
         field[y][x] = char
-
-
-def parser(path):
-    with open(path) as file:
-        data = file.read()
-        data = ft_split(data, '\n')
-        data[0] = ft_split(data[0], ' ')
-        data[1] = ft_split(data[1], ' ')
-
-    field = []
-    size_x = int(data[0][0])
-    size_y = int(data[0][1])
-    background_char = data[0][2]
-
-
-print(parser(input()))
