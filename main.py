@@ -1,4 +1,5 @@
 from Picture.draw_filled_rectangle import draw_filled_rectangle
+from Picture.draw_empty_rectangle import draw_empty_rectangle
 from Picture.draw_line import draw_line
 from additional_function import *
 from errors.error_1 import error_1
@@ -16,24 +17,27 @@ def parser(path):
     todo = []
     command = data[1][0]
     todo.append(command)
-    if command == 'L':
-        todo.append(int(data[1][1]))
-        todo.append(int(data[1][2]))
-        todo.append(int(data[1][3]))
-        todo.append(int(data[1][4]))
-        todo.append(data[1][5])
+    try:
+        if command == 'L':
+            todo.append(int(data[1][1]))
+            todo.append(int(data[1][2]))
+            todo.append(int(data[1][3]))
+            todo.append(int(data[1][4]))
+            todo.append(data[1][5])
 
-    elif command == 'R' or command == 'r':
-        todo.append(int(data[1][1]))
-        todo.append(int(data[1][2]))
-        todo.append(int(data[1][3]))
-        todo.append(int(data[1][4]))
-        todo.append(data[1][5])
-    elif command == 'c' or command == 'C':
-        todo.append(int(data[1][1]))
-        todo.append(int(data[1][2]))
-        todo.append(int(data[1][3]))
-        todo.append(data[1][4])
+        elif command == 'R' or command == 'r':
+            todo.append(int(data[1][1]))
+            todo.append(int(data[1][2]))
+            todo.append(int(data[1][3]))
+            todo.append(int(data[1][4]))
+            todo.append(data[1][5])
+        elif command == 'c' or command == 'C':
+            todo.append(int(data[1][1]))
+            todo.append(int(data[1][2]))
+            todo.append(int(data[1][3]))
+            todo.append(data[1][4])
+    except:
+        print('Error')
 
     return field, todo
 
@@ -42,13 +46,22 @@ path = 'C:/Users/User/PycharmProjects/MINI_PAINT/operation.it'
 if error_1(path):
     field, todo = parser(path)
     if todo[0] == 'L':
-        for i in draw_line(field, todo):
-            print(*i)
+        try:
+            for i in draw_line(field, todo):
+                print(*i)
+        except:
+            print('Error: draw_line')
 
     elif todo[0] == 'R':
-        for i in draw_filled_rectangle(field, todo):
-            print(*i)
+        try:
+            for i in draw_filled_rectangle(field, todo):
+                print(*i)
+        except:
+            print('Error: draw_filled_rectangle')
 
     elif todo[0] == 'r':
-        for i in draw_empty_rectangle(field, todo):
-            print(*i)
+        try:
+            for i in draw_empty_rectangle(field, todo):
+                print(*i)
+        except:
+            print('Error: draw_empty_rectangle')
