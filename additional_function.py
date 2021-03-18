@@ -17,3 +17,11 @@ def ft_split(string, wht_spl=' '):
     if tmp:
         mass.append(tmp)
     return mass
+
+
+def is_digit(string):
+    try:
+        string_1 = int(string)
+        return True
+    except:
+        return False

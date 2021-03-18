@@ -1,3 +1,5 @@
+from termcolor import colored
+
 from additional_function import *
 
 
@@ -19,6 +21,8 @@ def error_8(path):
 
     count_elements = ft_len(data_0) + ft_len(data_1)
     if count_elements - count_spaces == 2:
+        print('8: Successfully passed')
+        print('----------------------')
         return True
-    print('Error8')
+    print(colored('Error8', 'red'))
     return False

@@ -48,6 +48,12 @@ path = os.path.abspath(input())
 
 if error_1(path):
     field, todo = parser(path)
+
+    if field[-1] == todo[-1]:
+        while field[-1] == todo[-1]:
+            print('Введите другой символ рисования')
+            todo[-1] = input()
+
     if todo[0] == 'L':
         try:
             for i in draw_line(field, todo):
