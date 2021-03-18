@@ -1,3 +1,5 @@
+import os
+
 from Picture.draw_filled_rectangle import draw_filled_rectangle
 from Picture.draw_empty_rectangle import draw_empty_rectangle
 from Picture.draw_line import draw_line
@@ -42,7 +44,8 @@ def parser(path):
     return field, todo
 
 
-path = 'C:/Users/User/PycharmProjects/MINI_PAINT/operation.it'
+path = os.path.abspath(input())
+
 if error_1(path):
     field, todo = parser(path)
     if todo[0] == 'L':
