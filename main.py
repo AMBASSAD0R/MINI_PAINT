@@ -1,5 +1,7 @@
 import os
 
+from termcolor import colored
+
 from Picture.draw_filled_rectangle import draw_filled_rectangle
 from Picture.draw_empty_rectangle import draw_empty_rectangle
 from Picture.draw_line import draw_line
@@ -59,18 +61,18 @@ if error_1(path):
             for i in draw_line(field, todo):
                 print(*i)
         except:
-            print('Error: draw_line')
+            print(colored('Error: draw_line', 'red'))
 
     elif todo[0] == 'R':
         try:
             for i in draw_filled_rectangle(field, todo):
                 print(*i)
         except:
-            print('Error: draw_filled_rectangle')
+            print(colored('Error: draw_filled_rectangle', 'red'))
 
     elif todo[0] == 'r':
         try:
             for i in draw_empty_rectangle(field, todo):
                 print(*i)
         except:
-            print('Error: draw_empty_rectangle')
+            print(colored('Error: draw_empty_rectangle', 'red'))
