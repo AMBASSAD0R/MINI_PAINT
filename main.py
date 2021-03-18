@@ -1,5 +1,5 @@
-from Creat_picture import create_mas
-from Picture.square_full import square_full
+from Picture.draw_filled_rectangle import draw_filled_rectangle
+from Picture.draw_line import draw_line
 from additional_function import *
 from errors.error_1 import error_1
 
@@ -41,12 +41,14 @@ def parser(path):
 path = 'C:/Users/User/PycharmProjects/MINI_PAINT/operation.it'
 if error_1(path):
     field, todo = parser(path)
-    if todo[0] == 'R':
-        x = todo[1]
-        y = todo[2]
-        w = todo[3]
-        h = todo[4]
-        bg = todo[5]
-        xx = square_full(x, y, w, h, bg)
-        for _ in range(len(xx)):
-            print(*xx[_])
+    if todo[0] == 'L':
+        for i in draw_line(field, todo):
+            print(*i)
+
+    elif todo[0] == 'R':
+        for i in draw_filled_rectangle(field, todo):
+            print(*i)
+
+    elif todo[0] == 'r':
+        for i in draw_empty_rectangle(field, todo):
+            print(*i)

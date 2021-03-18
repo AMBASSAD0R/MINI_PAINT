@@ -36,7 +36,7 @@ def parser(path):
 
 
 def draw_line(field, todo):
-    map = [[field[-1] for _ in range(field[0])] for _ in range(field[1])]
+    map = [[field[-1] for _ in range(field[1])] for _ in range(field[0])]
 
     x1 = todo[1]
     y1 = todo[2]
@@ -64,7 +64,7 @@ def draw_line(field, todo):
 
     error, t = el / 2, 0
 
-    map[y][x] = char
+    map[x][y] = char
 
     while t < el:
         error -= es
@@ -76,4 +76,6 @@ def draw_line(field, todo):
             x += pdx
             y += pdy
         t += 1
-        map[y][x] = char
+        map[x][y] = char
+
+    return map
